@@ -298,6 +298,12 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
   snapDraggedEvents: boolean = true;
 
   /**
+   * The minimum height in pixels of events
+   */
+  @Input()
+  minEventHeight: number;
+
+  /**
    * Called when an event title is clicked
    */
   @Output()
@@ -621,7 +627,8 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
         minute: this.dayEndMinute
       },
       eventWidth: this.eventWidth,
-      segmentHeight: this.hourSegmentHeight
+      segmentHeight: this.hourSegmentHeight,
+      minEventHeight: this.minEventHeight
     });
     this.emitBeforeViewRender();
   }

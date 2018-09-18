@@ -439,6 +439,12 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   daysInWeek: number;
 
   /**
+   * The minimum height in pixels of events on the time grid
+   */
+  @Input()
+  minEventHeight: number;
+
+  /**
    * Called when a header week day is clicked. Adding a `cssClass` property on `$event.day` will add that class to the header element
    */
   @Output()
@@ -956,7 +962,8 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
         this.weekStartsOn,
         this.excludeDays,
         this.daysInWeek
-      )
+      ),
+      minEventHeight: this.minEventHeight
     });
   }
 
