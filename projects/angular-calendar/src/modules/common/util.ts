@@ -72,9 +72,13 @@ export function getMinutesMoved(
 
 export function getMinimumEventHeightInMinutes(
   hourSegments: number,
-  hourSegmentHeight: number
+  hourSegmentHeight: number,
+  minEventHeightInPx: number
 ) {
-  return (MINUTES_IN_HOUR / (hourSegments * hourSegmentHeight)) * 30;
+  minEventHeightInPx = minEventHeightInPx || 30;
+  return (
+    (MINUTES_IN_HOUR / (hourSegments * hourSegmentHeight)) * minEventHeightInPx
+  );
 }
 
 export function getDefaultEventEnd(

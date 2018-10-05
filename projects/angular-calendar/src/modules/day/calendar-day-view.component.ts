@@ -530,7 +530,11 @@ export class CalendarDayViewComponent implements OnChanges, OnInit, OnDestroy {
     let newEnd: Date = getDefaultEventEnd(
       this.dateAdapter,
       dayEvent.event,
-      getMinimumEventHeightInMinutes(this.hourSegments, this.hourSegmentHeight)
+      getMinimumEventHeightInMinutes(
+        this.hourSegments,
+        this.hourSegmentHeight,
+        this.minEventHeight
+      )
     );
     if (resizingBeforeStart) {
       newStart = this.dateAdapter.addMinutes(newStart, minutesMoved);

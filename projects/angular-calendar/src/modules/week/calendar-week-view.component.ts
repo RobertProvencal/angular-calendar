@@ -1038,7 +1038,8 @@ export class CalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   ) {
     const minimumEventHeight = getMinimumEventHeightInMinutes(
       this.hourSegments,
-      this.hourSegmentHeight
+      this.hourSegmentHeight,
+      this.minEventHeight
     );
     const newEventDates = {
       start: calendarEvent.start,
